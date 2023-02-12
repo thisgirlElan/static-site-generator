@@ -1,38 +1,66 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Static Site Generator
+This is a simple ssg that converts markdown files into a "light" website.
 
-## Getting Started
+## 👔 Features include:
+- Upload folder
+- Home page that lists all the .md files
+- Navigation through the sidebar or through card list
+- converted markdown screen
 
-First, run the development server:
+## 📋 App Preview
+<img src="https://user-images.githubusercontent.com/61628746/218320171-f0d8d543-36cc-47b2-a422-289d98a9bc7e.jpeg " height="50%" width="70%"/>
 
-```bash
-npm run dev
-# or
+<img src="https://user-images.githubusercontent.com/61628746/218319438-ff828689-2e90-4233-b589-365281f856d0.jpeg" height="50%" width="70%"/>
+
+<img src="https://user-images.githubusercontent.com/61628746/218319099-ded4a78a-ffc2-458b-93f5-98a4564a9503.jpeg" height="50%" width="70%"/>
+
+<img src="https://user-images.githubusercontent.com/61628746/218320152-1500491c-8f19-4d1c-a57a-6c3bb1f97c58.jpeg" height="50%" width="70%"/>
+
+<img src="https://user-images.githubusercontent.com/61628746/218319116-421e2cb9-95d3-4180-89af-45cbda52b09d.jpeg" height="50%" width="70%"/>
+
+<img src="https://user-images.githubusercontent.com/61628746/218320144-2137a961-2a5b-41ec-ab8e-6294586c9cf8.jpeg" />
+
+## 📝References and Guides
+- Next.js tutorials
+Numerous tutorials and blogs.
+I had no idea how next.js works 😅😇
+
+- [fs docs](https://node.readthedocs.io/en/latest/api/fs/)
+
+[Ben Awad's tutorial on SSGs](https://youtu.be/pY0vWYLDDco)
+
+## ▶ For the live site
+
+Use this link to navigate: [SSG](https://localhost:3000) ~~to be live implemented~~.
+
+## 🚀 Installation
+ Follow the documentation on [Next.js](https://nextjs.org/docs) to set up environment and get started.
+ 
+ Clone this repo:
+ 
+git clone https://github.com/thisgirlElan/static-site-generator.git
+
+- With yarn
+
+```
+yarn install
 yarn dev
-# or
-pnpm dev
+
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- With npm
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+```
+npm install
+npm run dev
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+After the commands run, you should see the upload folder screen.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+## 👨‍💻 You're ready! 
 
-To learn more about Next.js, take a look at the following resources:
+- Tinker and develop!!🎉
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
