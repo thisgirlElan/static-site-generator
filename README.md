@@ -21,13 +21,13 @@ This is a simple ssg that converts markdown files into a "light" website.
 <img src="https://user-images.githubusercontent.com/61628746/218320144-2137a961-2a5b-41ec-ab8e-6294586c9cf8.jpeg" />
 
 ## 📝References and Guides
-- Next.js tutorials
+- _Next.js tutorials_
 Numerous tutorials and blogs.
 I had no idea how next.js works 😅😇
 
 - [fs docs](https://node.readthedocs.io/en/latest/api/fs/)
 
-[Ben Awad's tutorial on SSGs](https://youtu.be/pY0vWYLDDco)
+- [Ben Awad's tutorial on SSGs](https://youtu.be/pY0vWYLDDco)
 
 ## ▶ For the live site
 
