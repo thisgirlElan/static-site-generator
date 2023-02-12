@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(153, 180, 202);
+}
+
+.body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.p {
+  margin: 15px 0;
+  line-height: 1.8;
+}
+
+.a {
+  text-decoration: none;
+  color: #333;
+}
+
+.img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.header {
+  background: steelblue;
+  color: #fff;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
+.header a {
+  color: #fff;
+}
+
+.container {
+  max-width: 768px;
+  margin: auto;
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.btn {
+  display: inline-block;
+  background: steelblue;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:hover {
+  transform: scale(0.98);
+}
+
+.btnback {
+  background: #f4f4f4;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.cardpage {
+  padding: 15px 30px;
+}
+
+.posttitle {
+  margin: 10px 10px;
+  color: aliceblue;
+}
+
+.postdate {
+  background: #f4f4f4;
+  margin-bottom: 20px;
+  padding: 3px 10px;
+}
+
+.postbody {
+  margin: 0 10px;
+  background-color: rgba(24, 86, 128, 0.568);
+  padding: 30px;
+  min-height: 84vh;
+}
+
+.postbody p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.postbody ul,
+.postbody ol {
+  margin-left: 40px;
+  font-size: 110%;
+  line-height: 2.3;
+  font-weight: bold;
+  padding: 10px;
+  color: rgba(185, 225, 248, 0.952);
+}
+
+.postbody h1,
+.postbody h2,
+.postbody h3,
+.postbody h4,
+.postbody h5 {
+  color: rgb(122, 238, 241);
+  text-decoration-line: underline;
+}
+
+.postbody a {
+  color: rgba(72, 255, 255, 0.795);
+  text-decoration-line: underline;
+}
+
+.postbody pre {
+  background: #48969bb9;
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 1.3;
+  font-family: var(--font-mono);
+}
+
+.postbody code {
+  font-family: var(--font-mono);
+  font-size: small;
+}
+
+.emptyspace {
+  margin-top: 20px;
+  color: rgba(168, 219, 226, 0.699);
+
+}
+
+.mdmain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgb(255, 255, 255);
+}
+
+.mdLink {
+  padding-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.mdmainslug {
+  min-height: 100%;
+  background-color: rgba(145, 192, 231, 0.856);
+}
+
+.mdcard {
+  width: 300px;
+  background-color: beige;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.mdimg {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.mddate {
+  background: #e6e6e6;
+  margin-bottom: 20px;
+  padding: 3px 10px;
+  color: black;
+}
+
+.mdtitle {
+  margin: 10px 0;
+  color: black;
+}
+
+.mdHome {
+  display: grid;
+  grid-template-columns: repeat(3, 2fr);
+  gap: 30px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.mdbtn {
+  display: inline-block;
+  background: steelblue;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.mdbtn:focus {
+  outline: none;
+}
+
+.mdbtn:hover {
+  transform: scale(0.98);
+}
+
+.mdbtnback {
+  background: #f4f4f4;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.mdNoFiles {
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+  background-color: rgba(254, 222, 179, 0.2);
+  color: black;
+  justify-content: center;
+  align-items: inherit;
+  align-content: center;
+  width: 30em;
+  margin-top: 30px;
+}
+
+.mdNoFiles p {
+  text-transform: none;
+  font-family: var(--font-mono);
+  padding: 0.5rem;
+  color: black;
+}
+
+@media (max-width: 1000px) {
+  .mdHome {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 30px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+  }
+}
+
+@media (max-width: 700px) {
+  .mdHome {
+    grid-template-columns: 1fr;
+  }
+
+  .postbody code {
+    font-family: var(--font-mono);
+    line-break: anywhere;
+  }
+}
