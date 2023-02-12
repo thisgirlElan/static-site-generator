@@ -23,7 +23,7 @@ export default function Marked({ frontMatter, slug, content }) {
 }
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync(path.join(process.cwd(),'pages/api/uploads'));
+    const files = fs.readdirSync(path.join(path.join(process.cwd() + "/pages", "/api", "/uploads")));
     const mdFiles = files && files.filter(file => file.includes('.md'));
 
     const paths = mdFiles.map((filename) => ({
