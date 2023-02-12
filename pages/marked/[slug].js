@@ -23,7 +23,7 @@ export default function Marked({ frontMatter, slug, content }) {
 }
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync(path.join('pages/api/uploads'));
+    const files = fs.readdirSync(path.join(process.cwd(),'pages/api/uploads'));
     const mdFiles = files && files.filter(file => file.includes('.md'));
 
     const paths = mdFiles.map((filename) => ({
@@ -41,7 +41,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
 
-    const markedFile = fs.readFileSync(path.join('pages/api/uploads', slug + '.md'), 'utf-8');
+    const markedFile = fs.readFileSync(path.join(process.cwd(),'pages/api/uploads', slug + '.md'), 'utf-8');
 
     const { data: frontMatter, content } = matter(markedFile)
 
