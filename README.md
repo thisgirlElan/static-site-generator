@@ -38,7 +38,13 @@ Use this link to navigate: [SSG](https://localhost:3000) ~~to be live implemente
  
  Clone this repo:
  
+```
+
 git clone https://github.com/thisgirlElan/static-site-generator.git
+
+```
+
+ Import dependencies and run local server
 
 - With yarn
 
