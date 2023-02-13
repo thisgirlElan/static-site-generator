@@ -18,9 +18,9 @@ This is a simple ssg that converts markdown files into a "light" website.
 
 - The landing page lists the converted files with .md extensions and offers navigation through a button or through the side menu. 
 
-<img src="https://user-images.githubusercontent.com/61628746/218319099-ded4a78a-ffc2-458b-93f5-98a4564a9503.jpeg" height="50%" width="70%"/>
+<img src="https://user-images.githubusercontent.com/61628746/218468799-3a252aed-3427-475f-ad2c-5565d24d1fd6.jpeg" height="50%" width="70%"/>
 
-<img src="https://user-images.githubusercontent.com/61628746/218320152-1500491c-8f19-4d1c-a57a-6c3bb1f97c58.jpeg" height="50%" width="70%"/>
+<img src="https://user-images.githubusercontent.com/61628746/218468833-da1943b0-ddbb-4968-8211-4d08958dc859.jpeg" height="50%" width="70%"/>
 
 - Upon navigation, the converted file is displayed. 
 
@@ -28,7 +28,7 @@ This is a simple ssg that converts markdown files into a "light" website.
 
 - If the uploaded folder does not contain md files, this screen is displayed
 
-<img src="https://user-images.githubusercontent.com/61628746/218320144-2137a961-2a5b-41ec-ab8e-6294586c9cf8.jpeg" />
+<img src="https://user-images.githubusercontent.com/61628746/218320144-2137a961-2a5b-41ec-ab8e-6294586c9cf8.jpeg"/>
 
 ## 📝References and Guides
 - _Next.js tutorials_
