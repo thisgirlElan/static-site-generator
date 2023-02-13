@@ -27,7 +27,7 @@ I had no idea how next.js works 😅😇
 
 - [fs docs](https://node.readthedocs.io/en/latest/api/fs/)
 
-- [Ben Awad's tutorial on SSGs](https://youtu.be/pY0vWYLDDco)
+- [Ben Awad's tutorial on SSGs](https://youtu.be/pY0vWYLDDco) and more
 
 ## ▶ For the live site
 
