@@ -62,7 +62,13 @@ npm run dev
 
 ```
 
-After the commands run, you should see the upload folder screen.
+After the commands run, open local host's port 3000 on your browser. 
+
+```
+
+http://localhost:3000 
+
+```
 
 
 ## 👨‍💻 You're ready! 
