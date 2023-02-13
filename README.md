@@ -8,15 +8,25 @@ This is a simple ssg that converts markdown files into a "light" website.
 - converted markdown screen
 
 ## 📋 App Preview
+- The welcome screen allows users to drag-and-drop or select a folder for site generation. 
+
 <img src="https://user-images.githubusercontent.com/61628746/218320171-f0d8d543-36cc-47b2-a422-289d98a9bc7e.jpeg " height="50%" width="70%"/>
 
+- After uploading completes, a button is displayed that when clicked navigates users to the generated site's landing page. 
+
 <img src="https://user-images.githubusercontent.com/61628746/218319438-ff828689-2e90-4233-b589-365281f856d0.jpeg" height="50%" width="70%"/>
+
+- The landing page lists the converted files with .md extensions and offers navigation through a button or through the side menu. 
 
 <img src="https://user-images.githubusercontent.com/61628746/218319099-ded4a78a-ffc2-458b-93f5-98a4564a9503.jpeg" height="50%" width="70%"/>
 
 <img src="https://user-images.githubusercontent.com/61628746/218320152-1500491c-8f19-4d1c-a57a-6c3bb1f97c58.jpeg" height="50%" width="70%"/>
 
+- Upon navigation, the converted file is displayed. 
+
 <img src="https://user-images.githubusercontent.com/61628746/218319116-421e2cb9-95d3-4180-89af-45cbda52b09d.jpeg" height="50%" width="70%"/>
+
+- If the uploaded folder does not contain md files, this screen is displayed
 
 <img src="https://user-images.githubusercontent.com/61628746/218320144-2137a961-2a5b-41ec-ab8e-6294586c9cf8.jpeg" />
 
