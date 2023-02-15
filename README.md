@@ -7,6 +7,13 @@ This is a simple ssg that converts markdown files into a "light" website.
 - Navigation through the sidebar or through card list
 - converted markdown screen
 
+## 🏝 Branch Differences:
+### master
+- uses the 'uploads' folder as a temporary storage for uploading and reading of folder contents
+
+### master-cloud
+- uses Google Cloud Storage to upload and read files from
+
 ## 📋 App Preview
 - The welcome screen allows users to drag-and-drop or select a folder for site generation. 
 
@@ -24,7 +31,7 @@ This is a simple ssg that converts markdown files into a "light" website.
 
 - Upon navigation, the converted file is displayed. 
 
-<img src="https://user-images.githubusercontent.com/61628746/218319116-421e2cb9-95d3-4180-89af-45cbda52b09d.jpeg" height="50%" width="70%"/>
+<img src="https://user-images.githubusercontent.com/61628746/219219633-de8bebc6-36c1-4ad1-b760-757a4879823b.jpeg" height="50%" width="70%"/>
 
 - If the uploaded folder does not contain md files, this screen is displayed
 
