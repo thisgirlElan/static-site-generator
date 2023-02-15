@@ -136,6 +136,13 @@
   text-decoration-line: underline;
 }
 
+.postbody img {
+  margin: 20px;
+  border-radius: 20px;
+  height: 200px;
+  width: auto;
+}
+
 .postbody pre {
   background: #48969bb9;
   padding: 20px;
