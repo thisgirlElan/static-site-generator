@@ -10,8 +10,8 @@ import { UploadButton } from '@rpldy/upload-button';
 import UploadDropZone from "@rpldy/upload-drop-zone";
 import { Line } from 'rc-progress';
 import Link from 'next/link';
-import fs from 'fs';
 import path from 'path';
+import { Storage } from '@google-cloud/storage';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -65,7 +65,7 @@ function Home() {
   return (
     <Uploady
       webkitdirectory={true}
-      destination={{ url: "http://localhost:3000/api/upload" }}
+      destination={{ url: "/api/upload" }}
     >
 
       <main className={styles.main}>
@@ -116,16 +116,20 @@ function Home() {
 export default Home;
 
 export async function getStaticProps() {
-  const files = fs.readdirSync(path.join('pages/api/uploads'));
+  const storage = new Storage({
+    keyFilename: path.join(process.cwd(), 'pages/api/next-ssg-377706-39ef4c8290ba.json'),
+    projectId: 'next-ssg-377706',
+  });
 
-  files.map((file) => {
-    fs.unlinkSync(path.join('pages/api/uploads/' + file))
-  })
+  const nextSsgBucket = storage.bucket('next_ssg');
 
+  nextSsgBucket.deleteFiles( (err => {
+    console.error("delete error :" , err);
+  }))
 
   return {
     props: {
-      posts: files,
+      posts: [],
     }
   }
 }

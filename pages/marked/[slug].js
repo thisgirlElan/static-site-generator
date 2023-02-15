@@ -1,9 +1,9 @@
-import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import Link from 'next/link';
 import styles from '../../styles/Marked.module.css';
+import { Storage } from '@google-cloud/storage';
 
 export default function Marked({ frontMatter, slug, content }) {
     return (
@@ -23,12 +23,24 @@ export default function Marked({ frontMatter, slug, content }) {
 }
 
 export async function getStaticPaths() {
-    const files = fs.readdirSync(path.join(path.join(process.cwd() + "/pages", "/api", "/uploads")));
-    const mdFiles = files && files.filter(file => file.includes('.md'));
+    const storage = new Storage({
+        keyFilename: path.join(process.cwd(), 'pages/api/next-ssg-377706-39ef4c8290ba.json'),
+        projectId: 'next-ssg-377706',
+    });
 
-    const paths = mdFiles.map((filename) => ({
+    const nextSsgBucket = storage.bucket('next_ssg');
+
+    const files = await nextSsgBucket.getFiles();
+
+    const mdFiles = files && files.map(files =>
+        files.filter(file =>
+            file.metadata.name.includes('.md')
+        )
+    )
+
+    const paths = mdFiles[0].map((filename) => ({
         params: {
-            slug: filename.replace('.md', '')
+            slug: filename.metadata.name.replace('.md', '')
         }
     }))
 
@@ -41,9 +53,22 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
 
-    const markedFile = fs.readFileSync(path.join(process.cwd(),'pages/api/uploads', slug + '.md'), 'utf-8');
+    const storage = new Storage({
+        keyFilename: path.join(process.cwd(), 'pages/api/next-ssg-377706-39ef4c8290ba.json'),
+        projectId: 'next-ssg-377706',
+    });
 
-    const { data: frontMatter, content } = matter(markedFile)
+    const nextSsgBucket = storage.bucket('next_ssg');
+
+    const file = nextSsgBucket.file(`${slug}.md`);
+
+    const buffer = await file.download();
+
+    const markedFile = buffer.toString('utf-8');
+
+    console.log("marked",markedFile);
+
+    const { data: frontMatter, content } = matter(markedFile);
 
     return {
         props: {

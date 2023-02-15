@@ -1,10 +1,9 @@
 import React from "react";
-import fs from 'fs';
 import path from "path";
-import matter from "gray-matter";
 import styles from '../styles/Marked.module.css';
 import Mdfile from "components/components/mdFile";
 import NavBar from 'components/navBar';
+import { Storage } from "@google-cloud/storage";
 
 
 function Mdhome({ posts }) {
@@ -16,20 +15,18 @@ function Mdhome({ posts }) {
             <div className={styles.mdHome}>
                 {posts.length !== 0 ? posts.map((post, index) => {
                     return (
-                        <div key={index}>
-                            <Mdfile post={post} />
-                        </div>
+                        <Mdfile key={index} post={post} />
                     )
                 }) :
-                 (
-                <div className={styles.mdNoFiles}>
-                    <p>Sorry, we could not generate your site. </p>
-                   <p> Please ensure your folder contains markdown files and try again.</p>
-                </div>
-                )
+                    (
+                        <div className={styles.mdNoFiles}>
+                            <p>Sorry, we could not generate your site. </p>
+                            <p> Please ensure your folder contains markdown files and try again.</p>
+                        </div>
+                    )
                 }
             </div>
-            
+
         </div>
     )
 }
@@ -37,33 +34,32 @@ function Mdhome({ posts }) {
 export default Mdhome;
 
 export async function getStaticProps() {
-    const files = fs.readdirSync(path.join('pages/api/uploads'));
-    const mdFiles = files && files.filter(file => file.includes('.md'));
+    const storage = new Storage({
+        keyFilename: path.join(process.cwd(), 'pages/api/next-ssg-377706-39ef4c8290ba.json'),
+        projectId: 'next-ssg-377706',
+    });
 
-    const posts = mdFiles.map((filename) => {
-        if (!(filename.includes('.md'))) {
-            return Response.status(400).json({
-                error: "Sorry, we cannot generate your site. \n Please ensure your files contain markdown extensions and try again."
-            })
-        }
-        const slug = filename.replace('.md', '');
+    const nextSsgBucket = storage.bucket('next_ssg');
 
-        const rawMarkup = fs.readFileSync(
-            path.join('pages/api/uploads', filename),
-            'utf-8'
-        );
+    const files = await nextSsgBucket.getFiles();
 
-        const { data: frontMatter } = matter(rawMarkup)
+    const mdFiles = files && files.map(files =>
+        files.filter(file =>
+            file.metadata.name.includes('.md')
+        )
+    )
+
+    const posts = mdFiles[0].map((file) => {
+        const slug = file.metadata.name.replace('.md', '');
 
         return {
-            slug,
-            frontMatter
+            slug
         }
     })
 
     return {
         props: {
-            posts,
+            posts
         }
     }
 }
