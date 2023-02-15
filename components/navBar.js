@@ -5,7 +5,7 @@ import NavItem from './navItem';
 
 export default function NavBar({ posts }) {
     const [navActive, setNavActive] = useState(false);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(null);
 
     return (
         <>
