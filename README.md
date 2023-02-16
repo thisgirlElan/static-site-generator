@@ -38,7 +38,7 @@ This is a simple ssg that converts markdown files into a "light" website.
 <img src="https://user-images.githubusercontent.com/61628746/218320144-2137a961-2a5b-41ec-ab8e-6294586c9cf8.jpeg"/>
 
 ## 📝References and Guides
-- _Next.js tutorials_
+- [Next.js tutorials](https://nextjs.org/docs/basic-features/pages) 
 Numerous tutorials and blogs.
 I had no idea how next.js works 😅😇
 
