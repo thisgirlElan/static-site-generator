@@ -66,8 +66,6 @@ export async function getStaticProps({ params: { slug } }) {
 
     const markedFile = buffer.toString('utf-8');
 
-    console.log("marked",markedFile);
-
     const { data: frontMatter, content } = matter(markedFile);
 
     return {
