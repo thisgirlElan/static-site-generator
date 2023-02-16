@@ -50,7 +50,7 @@ I had no idea how next.js works 😅😇
 
 ## ▶ The demo
 
-Use this link to navigate: [SSG](https://localhost:3000) ~~to be live implemented~~.
+To be implemented.
 
 ## 🚀 Installation
  Follow the documentation on [Next.js](https://nextjs.org/docs) to set up environment and get started.
