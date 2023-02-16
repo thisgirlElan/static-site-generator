@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from '../../styles/Marked.module.css';
 import { Storage } from '@google-cloud/storage';
 
-export default function Marked({ frontMatter, slug, content }) {
+export default function Marked({ slug, content }) {
     return (
         <>
             <main className={styles.mdmainslug}>
@@ -24,7 +24,7 @@ export default function Marked({ frontMatter, slug, content }) {
 
 export async function getStaticPaths() {
     const storage = new Storage({
-        keyFilename: path.join(process.cwd(), 'pages/api/next-ssg-377706-39ef4c8290ba.json'),
+        keyFilename: path.join(process.cwd(), 'pages/api/config/next-ssg-377706-39ef4c8290ba.json'),
         projectId: 'next-ssg-377706',
     });
 
@@ -54,7 +54,7 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
 
     const storage = new Storage({
-        keyFilename: path.join(process.cwd(), 'pages/api/next-ssg-377706-39ef4c8290ba.json'),
+        keyFilename: path.join(process.cwd(), 'pages/api/config/next-ssg-377706-39ef4c8290ba.json'),
         projectId: 'next-ssg-377706',
     });
 
@@ -66,11 +66,10 @@ export async function getStaticProps({ params: { slug } }) {
 
     const markedFile = buffer.toString('utf-8');
 
-    const { data: frontMatter, content } = matter(markedFile);
+    const { content } = matter(markedFile);
 
     return {
         props: {
-            frontMatter,
             slug,
             content
         }

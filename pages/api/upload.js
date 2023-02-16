@@ -13,7 +13,7 @@ export const config = {
 
 export default async function handler(req, res) {
   const storage = new Storage({
-    keyFilename: path.join(process.cwd(), 'pages/api/next-ssg-377706-39ef4c8290ba.json'),
+    keyFilename: path.join(process.cwd(), 'pages/api/config/next-ssg-377706-39ef4c8290ba.json'),
     projectId: 'next-ssg-377706',
   });
 
