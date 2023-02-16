@@ -9,7 +9,7 @@ This is a simple ssg that converts markdown files into a "light" website.
 
 ## 🏝 Branch Differences:
 ### master
-- uses the 'uploads' folder as a temporary storage for uploading and reading of folder contents
+- uses the 'uploads' folder in the code base as a temporary storage for uploading and reading of folder contents
 
 ### master-cloud
 - uses Google Cloud Storage to upload and read files from
@@ -38,7 +38,7 @@ This is a simple ssg that converts markdown files into a "light" website.
 <img src="https://user-images.githubusercontent.com/61628746/218320144-2137a961-2a5b-41ec-ab8e-6294586c9cf8.jpeg"/>
 
 ## 📝References and Guides
-- _Next.js tutorials_
+- [Next.js tutorials](https://nextjs.org/docs/basic-features/pages) 
 Numerous tutorials and blogs.
 I had no idea how next.js works 😅😇
 
@@ -46,7 +46,9 @@ I had no idea how next.js works 😅😇
 
 - [Ben Awad's tutorial on SSGs](https://youtu.be/pY0vWYLDDco) and more
 
-## ▶ For the live site
+- [GCS docs](https://cloud.google.com/storage/docs/) and tutorials
+
+## ▶ The demo
 
 Use this link to navigate: [SSG](https://localhost:3000) ~~to be live implemented~~.
 
@@ -91,5 +93,3 @@ http://localhost:3000
 ## 👨‍💻 You're ready! 
 
 - Tinker and develop!!🎉
-
-
