@@ -32,4 +32,4 @@ yarn-error.log*
 .vercel
 
 #gcs
-next-ssg-377706-39ef4c8290ba.json
+# next-ssg-377706-39ef4c8290ba.json
