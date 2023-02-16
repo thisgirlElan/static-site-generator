@@ -2,7 +2,7 @@
 
 import { createReadStream } from 'fs';
 import path from 'path';
-import formidable from "./../lib/formidable-serverless";
+import formidable from "./lib/formidable-serverless";
 import { Storage } from '@google-cloud/storage';
 
 export const config = {
