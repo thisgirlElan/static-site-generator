@@ -15,7 +15,7 @@ This is a simple ssg that converts markdown files into a "light" website.
 - uses Google Cloud Storage to upload and read files from
 
 ## 📋 App Preview
-- The welcome screen allows users to drag-and-drop or select a folder for site generation. 
+- The welcome screen allows users to drag-and-drop or select a folder for site generation. If there were any preuploaded folders, a screen load/refresh would delete them but a new upload without reloading appends the files to the previously uploaded. 
 
 <img src="https://user-images.githubusercontent.com/61628746/218320171-f0d8d543-36cc-47b2-a422-289d98a9bc7e.jpeg " height="50%" width="70%"/>
 
@@ -48,12 +48,8 @@ I had no idea how next.js works 😅😇
 
 - [GCS docs](https://cloud.google.com/storage/docs/) and tutorials
 
-## ▶ The demo
-
-To be implemented.
-
 ## 🚀 Installation
- Follow the documentation on [Next.js](https://nextjs.org/docs) to set up environment and get started.
+ Next.js requires **Node.js 14.6.0 or newer** and a **Mac, Windows or Linux OS**. You may check out their [getting started docs](https://nextjs.org/docs) for an up to date documentation.
  
  Clone this repo:
  
@@ -90,6 +86,6 @@ http://localhost:3000
 ```
 
 
-## 👨‍💻 You're ready! 
+## 👨‍💻 You're ready! Make it yours.
 
 - Tinker and develop!!🎉
