@@ -50,10 +50,13 @@ I had no idea how next.js works 😅😇
 
 ## ▶ The demo
 
-To be implemented.
+It doesn't quite work as expected in production, working on a workaround. Everything works well in the local environment though.
+:)
 
 ## 🚀 Installation
- Follow the documentation on [Next.js](https://nextjs.org/docs) to set up environment and get started.
+
+Next.js requires **Node.js 14.6.0 or newer** and a **Mac, Windows or Linux OS**. You may check out their [getting started docs](https://nextjs.org/docs) for an up to date documentation.
+
  
  Clone this repo:
  
@@ -63,12 +66,58 @@ git clone https://github.com/thisgirlElan/static-site-generator.git
 
 ```
 
- Import dependencies and run local server
+ Import dependencies 
 
 - With yarn
 
 ```
+
 yarn install
+
+```
+
+- With npm
+
+```
+
+npm install
+
+```
+
+### Prerequisites
+
+- Setup a Google Cloud storage account and create a bucket.
+- You'll get a Json key for the credentials. Put it in the cloned repo's `Pages` folder
+- Create a `.env.local` file in the root folder and put the values from the Json key in variables as such:
+
+
+```
+
+GOOGLE_CLOUD_PROJECT_TYPE= project type
+GOOGLE_CLOUD_PROJECT_ID= project id
+GOOGLE_CLOUD_PRIVATE_KEY_ID=  private key id
+GOOGLE_CLOUD_PRIVATE_KEY= "private key"
+GOOGLE_CLOUD_CLIENT_EMAIL= client email
+GOOGLE_CLOUD_CLIENT_ID= client id
+GOOGLE_CLOUD_AUTH_URI= auth uri
+GOOGLE_CLOUD_TOKEN_URI= token uri
+GOOGLE_CLOUD_AUTH_PROVIDER_X509_CERT_URL= provider cert url
+GOOGLE_CLOUD_CLIENT_X509_CERT_URL= client cert url
+GOOGLE_CLOUD_KEY={ Json Key content as is }
+
+```
+
+When hosting, set the same environment keys and values in the platforms environment variables since variables set in the codebase "cross-references" the keys e.g
+
+`const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;`
+
+- Add `key.json` and `.env.local` in `.gitignore`
+
+Start local server
+
+- With yarn
+
+```
 yarn dev
 
 ```
@@ -76,12 +125,11 @@ yarn dev
 - With npm
 
 ```
-npm install
 npm run dev
 
 ```
 
-After the commands run, open local host's port 3000 on your browser. 
+After the command runs, open local host's port 3000 on your browser. 
 
 ```
 
@@ -89,8 +137,7 @@ http://localhost:3000
 
 ```
 
-
-## 👨‍💻 You're ready! 
+## 👨‍💻 You're ready! Make it yours.
 
 - Tinker and develop!!🎉
 
