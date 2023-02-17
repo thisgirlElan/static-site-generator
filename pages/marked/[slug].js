@@ -1,4 +1,3 @@
-import path from 'path';
 import matter from 'gray-matter';
 import { marked } from 'marked';
 import Link from 'next/link';
@@ -6,7 +5,7 @@ import styles from '../../styles/Marked.module.css';
 import { Storage } from '@google-cloud/storage';
 
 const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
-const keyFilePath = process.env.GOOGLE_CLOUD_KEY_FILE_PATH;
+const keyFilePath = JSON.parse(process.env.GOOGLE_CLOUD_KEY);
 
 export default function Marked({ slug, content }) {
     return (
@@ -27,7 +26,10 @@ export default function Marked({ slug, content }) {
 
 export async function getStaticPaths() {
     const storage = new Storage({
-        keyFilename: path.join(process.cwd(), keyFilePath),
+        credentials: {
+            client_email: keyFilePath.client_email,
+            private_key: keyFilePath.private_key.replace(/\\n/g, "\n"),
+        },
         projectId: projectId,
     });
 
@@ -57,7 +59,10 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params: { slug } }) {
 
     const storage = new Storage({
-        keyFilename: path.join(process.cwd(), keyFilePath),
+        credentials: {
+            client_email: keyFilePath.client_email,
+            private_key: keyFilePath.private_key.replace(/\\n/g, "\n"),
+        },
         projectId: projectId,
     });
 

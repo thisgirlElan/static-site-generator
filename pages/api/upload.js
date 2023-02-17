@@ -6,7 +6,7 @@ import formidable from "./lib/formidable-serverless";
 import { Storage } from '@google-cloud/storage';
 
 const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
-const keyFilePath = process.env.GOOGLE_CLOUD_KEY_FILE_PATH;
+const keyFilePath = JSON.parse(process.env.GOOGLE_CLOUD_KEY);
 
 export const config = {
   api: {
@@ -16,7 +16,10 @@ export const config = {
 
 export default async function handler(req, res) {
   const storage = new Storage({
-    keyFilename: path.join(process.cwd(), keyFilePath),
+    credentials: {
+      client_email: keyFilePath.client_email,
+      private_key: keyFilePath.private_key.replace(/\\n/g, "\n"),
+    },
     projectId: projectId,
   });
 
@@ -83,7 +86,7 @@ export default async function handler(req, res) {
     res.status(500).send({
       message: `Could not upload the file: ${file.newFilename}. ${err}`,
     });
-    
+
   }
   res.status(200).json({ message: "success" });
 }

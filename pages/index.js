@@ -10,13 +10,12 @@ import { UploadButton } from '@rpldy/upload-button';
 import UploadDropZone from "@rpldy/upload-drop-zone";
 import { Line } from 'rc-progress';
 import Link from 'next/link';
-import path from 'path';
 import { Storage } from '@google-cloud/storage';
 
 const inter = Inter({ subsets: ['latin'] });
 
 const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
-const keyFilePath = process.env.GOOGLE_CLOUD_KEY_FILE_PATH;
+const keyFilePath = JSON.parse(process.env.GOOGLE_CLOUD_KEY);
 
 
 function Home() {
@@ -120,7 +119,10 @@ export default Home;
 
 export async function getStaticProps() {
   const storage = new Storage({
-    keyFilename: path.join(process.cwd(), keyFilePath),
+    credentials: {
+      client_email: keyFilePath.client_email,
+      private_key: keyFilePath.private_key.replace(/\\n/g, "\n"),
+    },
     projectId: projectId,
   });
 
