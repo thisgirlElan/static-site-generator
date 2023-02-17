@@ -55,7 +55,7 @@ I had no idea how next.js works 😅😇
  
 ```
 
-git clone https://github.com/thisgirlElan/static-site-generator.git
+git clone https://github.com/thisgirlElan/Next_SSG.git
 
 ```
 
