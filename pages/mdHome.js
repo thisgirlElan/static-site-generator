@@ -5,6 +5,8 @@ import Mdfile from "components/components/mdFile";
 import NavBar from 'components/navBar';
 import { Storage } from "@google-cloud/storage";
 
+const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
+const keyFilePath = process.env.GOOGLE_CLOUD_KEY_FILE_PATH;
 
 function Mdhome({ posts }) {
     return (
@@ -34,32 +36,41 @@ function Mdhome({ posts }) {
 export default Mdhome;
 
 export async function getStaticProps() {
-    const storage = new Storage({
-        keyFilename: path.join(process.cwd(), 'pages/api/config/next-ssg-377706-39ef4c8290ba.json'),
-        projectId: 'next-ssg-377706',
-    });
+    try {
+        const storage = new Storage({
+            keyFilename: path.join(process.cwd(), keyFilePath),
+            projectId: projectId,
+        });
 
-    const nextSsgBucket = storage.bucket('next_ssg');
+        const nextSsgBucket = storage.bucket('next_ssg');
 
-    const files = await nextSsgBucket.getFiles();
+        const files = await nextSsgBucket.getFiles();
 
-    const mdFiles = files && files.map(files =>
-        files.filter(file =>
-            file.metadata.name.includes('.md')
+        const mdFiles = files && files.map(files =>
+            files.filter(file =>
+                file.metadata.name.includes('.md')
+            )
         )
-    )
 
-    const posts = mdFiles[0].map((file) => {
-        const slug = file.metadata.name.replace('.md', '');
+        const posts = mdFiles[0].map((file) => {
+            const slug = file.metadata.name.replace('.md', '');
+
+            return {
+                slug
+            }
+        })
 
         return {
-            slug
+            props: {
+                posts
+            }
         }
-    })
-
-    return {
-        props: {
-            posts
+    } catch (error) {
+        console.error("An error occurred while fetching files from storage: ", error);
+        return {
+            props: {
+                posts: []
+            }
         }
     }
 }

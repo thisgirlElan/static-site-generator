@@ -5,6 +5,9 @@ import path from 'path';
 import formidable from "./lib/formidable-serverless";
 import { Storage } from '@google-cloud/storage';
 
+const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
+const keyFilePath = process.env.GOOGLE_CLOUD_KEY_FILE_PATH;
+
 export const config = {
   api: {
     bodyParser: false
@@ -13,8 +16,8 @@ export const config = {
 
 export default async function handler(req, res) {
   const storage = new Storage({
-    keyFilename: path.join(process.cwd(), 'pages/api/config/next-ssg-377706-39ef4c8290ba.json'),
-    projectId: 'next-ssg-377706',
+    keyFilename: path.join(process.cwd(), keyFilePath),
+    projectId: projectId,
   });
 
   const nextSsgBucket = storage.bucket('next_ssg');
@@ -54,7 +57,7 @@ export default async function handler(req, res) {
     });
 
     blobStream.on("finish", async () => {
-      const publicURL = `https://storage.cloud.google.com/${nextSsgBucket.name}/${blob.name}`;
+      const publicURL = `https://storage.googleapis.com/${nextSsgBucket.name}/${blob.name}`;
       try {
         await blob.makePublic();
       } catch {
@@ -80,7 +83,8 @@ export default async function handler(req, res) {
     res.status(500).send({
       message: `Could not upload the file: ${file.newFilename}. ${err}`,
     });
-
+    
   }
+  res.status(200).json({ message: "success" });
 }
 

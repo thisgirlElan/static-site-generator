@@ -15,6 +15,9 @@ import { Storage } from '@google-cloud/storage';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
+const keyFilePath = process.env.GOOGLE_CLOUD_KEY_FILE_PATH;
+
 
 function Home() {
 
@@ -117,19 +120,18 @@ export default Home;
 
 export async function getStaticProps() {
   const storage = new Storage({
-    keyFilename: path.join(process.cwd(), 'pages/api/config/next-ssg-377706-39ef4c8290ba.json'),
-    projectId: 'next-ssg-377706',
+    keyFilename: path.join(process.cwd(), keyFilePath),
+    projectId: projectId,
   });
 
   const nextSsgBucket = storage.bucket('next_ssg');
 
-  nextSsgBucket.deleteFiles( (err => {
-    console.error("delete error :" , err);
-  }))
+  const [files] = await nextSsgBucket.getFiles();
+  const posts = await nextSsgBucket.deleteFiles({ files });
 
   return {
     props: {
-      posts: [],
+      posts
     }
   }
 }
