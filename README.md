@@ -109,7 +109,7 @@ GOOGLE_CLOUD_KEY={ Json Key content as is }
 
 ```
 
-When hosting, set the same environment keys and values in the platforms environment variables since variables set in the codebase "cross-references" the keys e.g
+When hosting, set the same environment keys and values in the platform's environment variables since variables set in the codebase "cross-references" the keys e.g
 
 `const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;`
 
