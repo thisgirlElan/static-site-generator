@@ -15,7 +15,8 @@ This is a simple ssg that converts markdown files into a "light" website.
 - uses Google Cloud Storage to upload and read files from
 
 ## 📋 App Preview
-- The welcome screen allows users to drag-and-drop or select a folder for site generation. 
+- The welcome screen allows users to drag-and-drop or select a folder for site generation.
+If there were any preuploaded folders, a screen load/refresh would delete them but a new upload without reloading appends the files to the previously uploaded.
 
 <img src="https://user-images.githubusercontent.com/61628746/218320171-f0d8d543-36cc-47b2-a422-289d98a9bc7e.jpeg " height="50%" width="70%"/>
 
@@ -87,6 +88,7 @@ npm install
 ### Prerequisites
 
 - Setup a Google Cloud storage account and create a bucket.
+- Ensure the bucket's authorization is set to public to enable easier reading, writing and deletion of files.
 - You'll get a Json key for the credentials. Put it in the cloned repo's `Pages` folder
 - Create a `.env.local` file in the root folder and put the values from the Json key in variables as such:
 
