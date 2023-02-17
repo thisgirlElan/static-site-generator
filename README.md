@@ -139,7 +139,7 @@ http://localhost:3000
 
 ```
 
-## 👨‍💻 You're ready! Make it yours.
+## 👨‍💻 You're ready! Make it yours. 
 
 - Tinker and develop!!🎉
 
