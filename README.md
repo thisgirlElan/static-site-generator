@@ -63,7 +63,7 @@ Next.js requires **Node.js 14.6.0 or newer** and a **Mac, Windows or Linux OS**.
  
 ```
 
-git clone https://github.com/thisgirlElan/static-site-generator.git
+git clone https://github.com/thisgirlElan/Next_SSG.git
 
 ```
 
